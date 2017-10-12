@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: intro-app
+  annotations:
+    kubernetes.io/ingress.class: "tectonic"
+spec:
+  rules:
+    - host: lab.18.220.58.120.xip.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: intro-app
+              servicePort: 80
